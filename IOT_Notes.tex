@@ -1,0 +1,142 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{IOT NOTES}
+\author{Carlos Riggio Diéguez}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+
+
+    \begin{center}
+        \textbf{1 NFU}\\
+        \textbf{2 RNA}\\
+        \textbf{3 NMA}\\
+        \textbf{4 EWT}\\
+    \end{center}
+
+    \newpage
+    \begin{center}
+        \Huge\textbf{1. NFU}
+      \end{center}
+
+    \textbf{Digital comunication}
+    \\
+
+    Digital comunication is based on wave signals comunications. When having this kind of signals we can compute:
+    \begin{enumerate}
+        \item Energy of the wave:
+            \[
+            E[J] = \int_{d1}^{d2}  \,dx  \frac{s^2(t)}{R} \, dt
+            \]
+        
+        Being: 
+        \begin{enumerate}[label=\textbullet]
+            \item d1 = starting distance of the signal.
+            \item d2 = ending distance of the signal.
+            \item $s(t) = \text{equation of the signal in function of time. Usually: } A\cos(2\pi f_c T)$
+            \item R = resistance. Usually 50 $\Omega$
+          \end{enumerate}
+          
+
+        \item Power Transmited [W]:
+            \[\frac{E}{D} \]
+            Being: 
+            \begin{enumerate}[label=\textbullet]
+                \item E = energy of the wave.
+                \item D = distance of the wave = (d2-d1)
+              \end{enumerate}
+
+        \item Power Received:
+        \begin{enumerate}[label=\textbullet]
+            \item $[W]$:    $\frac{Pt[W]}{L \text{ (Loss of the channel)}}$
+            \item $[dBW]$:  $Pt[dBW] - L[dB]$
+            \item $[dBm]$:  $Pt[dBm] - L[dB]$
+          \end{enumerate}
+          
+      \end{enumerate}
+
+      \vspace{1cm}
+
+      \textbf{Data Rate:} Number of information bits per second transmitted.
+      
+      \textbf{Bit Rate:} Number of bits per second transmitted when source is active.
+
+      \textbf{User Throughput (U):} Number of information bits per second received.
+
+      \textbf{Bit Error Rate (BER):} Percentage of erroneous bits.
+
+      \textbf{Block Error Rate (BER):} Percentage of erroneous data blocks.
+
+      \textbf{Energy Efficiency (EE):} Number of information bits received per joule.
+      \begin{center} $E = E1 + E2 + E3 + E4$ \end{center}
+
+      Being: 
+      \begin{enumerate}[label=\textbullet]
+          \item E1 = energy consumed by the source.
+          \item E2 = energy consumed by the transmitter.
+          \item E3 = energy consumed by the receiver.
+          \item E4 = energy consumed by the destination.
+        \end{enumerate}
+         \textcolor{red}{E3 and E4 are neglictable if the device is connected to the electric grid}
+      
+    
+
+    
+\end{document}
